@@ -1,0 +1,24 @@
+{
+    "name": "lukaskleinschmidt/uuid",
+    "description": "Kirby UUID",
+    "type": "kirby-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lukas Kleinschmidt",
+            "email": "public@kleinschmidt.at"
+        }
+    ],
+    "require": {
+        "getkirby/composer-installer": "^1.1",
+        "ramsey/uuid": "^3.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "LukasKleinschmidt\\Uuid\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
