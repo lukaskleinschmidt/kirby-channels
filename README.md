@@ -1,4 +1,4 @@
-# Kirby UUID
+# Kirby Channels
 
 *Working on it*
 
@@ -6,18 +6,18 @@
 
 ### Download
 
-Download and copy this repository to `/site/plugins/uuid`.
+Download and copy this repository to `/site/plugins/channels`.
 
 ### Git submodule
 
 ```
-git submodule add https://github.com/lukaskleinschmidt/kirby-uuid.git site/plugins/uuid
+git submodule add https://github.com/lukaskleinschmidt/kirby-channels.git site/plugins/channels
 ```
 
 ### Composer
 
 ```
-composer require lukaskleinschmidt/kirby-uuid
+composer require lukaskleinschmidt/kirby-channels
 ```
 
 ## License

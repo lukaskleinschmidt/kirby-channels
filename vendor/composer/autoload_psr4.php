@@ -8,6 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
     'Ramsey\\Uuid\\' => array($vendorDir . '/ramsey/uuid/src'),
-    'LukasKleinschmidt\\Uuid\\' => array($baseDir . '/src'),
+    'LukasKleinschmidt\\Channels\\' => array($baseDir . '/src'),
     'Kirby\\' => array($vendorDir . '/getkirby/composer-installer/src'),
 );

@@ -1,6 +1,6 @@
 <?php
 
-namespace LukasKleinschmidt\Uuid;
+namespace LukasKleinschmidt\Channels;
 
 use Kirby\Exception\DuplicateException;
 use Kirby\Toolkit\Dir;
@@ -86,7 +86,7 @@ trait PageActions
 
         Dir::copy($this->root(), $tmp->root(), $children, $ignore);
 
-        $copy = $parentModel->clone()->findPageOrDraft($tmp->slug());
+        $copy = $parentModel->clone()->findPageOrDraft($tmp->uid());
 
         // update all slugs
         if ($this->kirby()->multilang() === true) {
@@ -108,18 +108,29 @@ trait PageActions
     }
 
     /**
-     * Creates and stores a new page
+     * Creates a child of the current page
      *
      * @param array $props
-     * @return Page
+     * @return self
      */
-    public static function create(array $props): Page
+    public function createChild(array $props)
     {
+        if (Channels::isParent($this) === false) {
+            return parent::create($props);
+        }
+
+        $props = array_merge($props, [
+            'url'    => null,
+            'num'    => null,
+            'parent' => $this,
+            'site'   => $this->site(),
+        ]);
+
         $slug = Str::slug($props['slug'] ?? $props['content']['title'] ?? null);
 
         $props['content']['slug'] = $slug;
         $props['slug'] = (string) Uuid::uuid4();
 
-        return parent::create($props);
+        return static::create($props);
     }
 }

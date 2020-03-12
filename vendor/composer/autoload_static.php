@@ -22,7 +22,7 @@ class ComposerStaticInit767cadca166893e72b699e1105ce29da
         ),
         'L' => 
         array (
-            'LukasKleinschmidt\\Uuid\\' => 23,
+            'LukasKleinschmidt\\Channels\\' => 27,
         ),
         'K' => 
         array (
@@ -39,7 +39,7 @@ class ComposerStaticInit767cadca166893e72b699e1105ce29da
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
         ),
-        'LukasKleinschmidt\\Uuid\\' => 
+        'LukasKleinschmidt\\Channels\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
@@ -54,7 +54,9 @@ class ComposerStaticInit767cadca166893e72b699e1105ce29da
         'Kirby\\ComposerInstaller\\Installer' => __DIR__ . '/..' . '/getkirby/composer-installer/src/ComposerInstaller/Installer.php',
         'Kirby\\ComposerInstaller\\Plugin' => __DIR__ . '/..' . '/getkirby/composer-installer/src/ComposerInstaller/Plugin.php',
         'Kirby\\ComposerInstaller\\PluginInstaller' => __DIR__ . '/..' . '/getkirby/composer-installer/src/ComposerInstaller/PluginInstaller.php',
-        'LukasKleinschmidt\\Uuid\\Page' => __DIR__ . '/../..' . '/src/Page.php',
+        'LukasKleinschmidt\\Channels\\Page' => __DIR__ . '/../..' . '/src/Page.php',
+        'LukasKleinschmidt\\Channels\\PageActions' => __DIR__ . '/../..' . '/src/PageActions.php',
+        'LukasKleinschmidt\\Channels\\PageRules' => __DIR__ . '/../..' . '/src/PageRules.php',
         'Ramsey\\Uuid\\BinaryUtils' => __DIR__ . '/..' . '/ramsey/uuid/src/BinaryUtils.php',
         'Ramsey\\Uuid\\Builder\\DefaultUuidBuilder' => __DIR__ . '/..' . '/ramsey/uuid/src/Builder/DefaultUuidBuilder.php',
         'Ramsey\\Uuid\\Builder\\DegradedUuidBuilder' => __DIR__ . '/..' . '/ramsey/uuid/src/Builder/DegradedUuidBuilder.php',

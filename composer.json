@@ -1,6 +1,6 @@
 {
-    "name": "lukaskleinschmidt/uuid",
-    "description": "Kirby UUID",
+    "name": "lukaskleinschmidt/channels",
+    "description": "Kirby Channels",
     "type": "kirby-plugin",
     "license": "MIT",
     "authors": [
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "LukasKleinschmidt\\Uuid\\": "src/"
+            "LukasKleinschmidt\\Channels\\": "src/"
         }
     },
     "config": {

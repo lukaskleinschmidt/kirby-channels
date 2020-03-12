@@ -2,34 +2,34 @@
 
 @include_once __DIR__ . '/vendor/autoload.php';
 
-use LukasKleinschmidt\Uuid\Page;
-use LukasKleinschmidt\Uuid\PageRules;
+use LukasKleinschmidt\Channels\Page;
+use LukasKleinschmidt\Channels\PageRules;
+use LukasKleinschmidt\Channels\Channels;
 
-Kirby::plugin('lukaskleinschmidt/uuid', [
+Kirby::plugin('lukaskleinschmidt/channels', [
     'hooks' => [
         'system.loadPlugins:after' => function () {
-            $kirby  = kirby();
+            $kirby = kirby();
 
             if ($kirby->multilang() === false) {
                 return;
             }
 
             $models = $kirby->extensions('pageModels');
-            $pages  = $kirby->blueprints('pages');
+            $pages  = Channels::pages();
 
-            // patch pages that don't have a custom page model yet
+            // patch pages that don't use a custom page model
             $keys = array_filter($pages, function ($key) use ($models) {
-                return ! array_key_exists($key, $models);
+                return array_key_exists($key, $models) === false;
             });
 
             $kirby->extend([
                 'pageModels' => array_fill_keys($keys, Page::class),
-            ]);
-
-            $kirby->extend([
-                'hooks' =>[
+                'hooks' => [
                     'page.create:before' => function ($page) {
-                        PageRules::create($page);
+                        if (Channels::isParent($page)) {
+                            PageRules::create($page);
+                        }
                     }
                 ]
             ]);

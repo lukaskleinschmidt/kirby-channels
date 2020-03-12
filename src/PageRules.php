@@ -1,6 +1,6 @@
 <?php
 
-namespace LukasKleinschmidt\Uuid;
+namespace LukasKleinschmidt\Channels;
 
 use Kirby\Cms\Page;
 use Kirby\Cms\PageRules as BasePageRules;
