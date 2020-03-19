@@ -33,6 +33,6 @@ Kirby::plugin('lukaskleinschmidt/channels', [
                     }
                 ]
             ]);
-        },
+        }
     ]
 ]);
